@@ -5,15 +5,19 @@
     <title>Marcella O'Sullivan Art</title>
     <style>
     body {
-            background-image: url(img/old_map_@2X.png);
-            background-repeat: repeat;
+            background: radial-gradient(rgba(0,0,0,1),rgba(255,255,255,0)),url(img/bluelinen.png) repeat;
+            background: -moz-radial-gradient(rgba(255,255,255,0),rgba(0,0,0,1)),url(img/bluelinen.png) repeat;
+        background: -webkit-radial-gradient(rgba(255,255,255,0),rgba(0,0,0,1)),url(img/bluelinen.png) repeat;
+        }
+        h1 {
+            font-family: fantasy;
         }
         .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #cc5350;
+    background: #abc3f5;
     color:#fff;
     z-index: 1000;
     height: 200px;
@@ -52,35 +56,29 @@ height:2000px;
 }
     </style>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 <body>
+    <a href=#>
     <div class="header">
-  <h1>Animated Fixed Header (Scroll Down)</h1>
-</div>
+  <h1>Marcella O'Sullivan</h1>
+</div></a>
 <div class="content">
 </div>
 <script>
-        $(function(){
- var shrinkHeader = 300;
-  $(window).scroll(function() {
-    var scroll = getCurrentScroll();
-      if ( scroll >= shrinkHeader ) {
-           $('.header').addClass('shrink');
-        }
-        else {
+     alert("javascript on");
+    var shrinkHeader = 300;
+    window.onscroll=function()
+    {
+        var scroll = getCurrentScroll();
+        if (scroll >=shrinkHeader) {
+            $('.header').addClass('shrink')
+        }else {
             $('.header').removeClass('shrink');
         }
-  });
-function getCurrentScroll() {
+    }
+    function getCurrentScroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
     }
-});
-    <script>
-        alert("javascript on")
-    </script>
-<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+</script>        
 </body>
